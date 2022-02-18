@@ -5,14 +5,6 @@
 require 'hexapdf'
 require_relative 'cc'
 
-def mm(z) # point to mm
-  z * 72/25.4
-end
-
-def mscale(y)
-  y * mm(5)
-end
-
 doc = HexaPDF::Document.new
   page = doc.pages.add
   canvas = page.canvas 
