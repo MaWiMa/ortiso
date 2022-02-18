@@ -80,4 +80,31 @@ canvas.text( "Klasse", at:[mm(130),mm(15)])
 canvas.text( "Datum", at:[mm(170),mm(15)])
 # end frame
 
+# begin helping lines
+canvas.line_width(0.5) {
+  canvas.stroke_color('a1a1a1') {
+      canvas.line_cap_style = 1
+      [1,2,3,4,5,6,7,8].each { |i|
+        canvas.line(mm(25)+mm(20*i),mm(25),mm(25)+mm(20*i),mm(290)).stroke
+        canvas.line(mm(25),mm(65)+mm(20*i),mm(200),mm(65)+mm(20*i)).stroke
+    }
+  }
+}
+# end helping lines
+
+# begin helping line marker
+canvas.line_width(1.2) {
+  canvas.stroke_color('000000') {
+    canvas.line_cap_style = 1
+    [1,2,3,4,5,6,7,8].each { |i|
+      canvas.line(mm(25)+mm(20*i),mm(25),mm(25)+mm(20*i),mm(28)).stroke
+      canvas.line(mm(25)+mm(20*i),mm(286),mm(25)+mm(20*i),mm(290)).stroke
+        canvas.line(mm(25),mm(65)+mm(20*i),mm(28),mm(65)+mm(20*i)).stroke
+        canvas.line(mm(196),mm(65)+mm(20*i),mm(200),mm(65)+mm(20*i)).stroke
+    }
+  }
+}
+# end helping line marker
+
+
 doc.write("#{File.basename(__FILE__,'.rb')}.pdf", optimize: true)
