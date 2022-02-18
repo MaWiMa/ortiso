@@ -2,6 +2,10 @@
 # cc.rb 
 # Norbert Reschke
 
+def mm(z) # point to mm
+  z * 72/25.4
+end
+
 def cc(canvas)
   cEye = canvas.graphic_object(:arc,cx: 0,cy: 0,a: 17,b: 17, start_angle: 49, end_angle: 309)
   canvas.line_width(4.5)
