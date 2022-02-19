@@ -19,16 +19,16 @@ doc = HexaPDF::Document.new
 
 # begin frame
   canvas.font('Helvetica', size: 8)
-  canvas.text( "Produkterstellung - Technische Zeichnungen - in der Ausbildungsvorbereitung", at:[mm(25),mm(291.5)])
-  canvas.text( "#{File.basename(__FILE__,'.rb')}.pdf", at:[mm(180),mm(291.5)])
+  canvas.text( "Produkterstellung - Technische Zeichnungen - in der Ausbildungsvorbereitung", at:[mm(25),mm(288.5)])
+  canvas.text( "#{File.basename(__FILE__,'.rb')}.pdf", at:[mm(180),mm(288.5)])
 
   canvas.line_width(2) {
     canvas.line_cap_style = 2
-    canvas.line(mm(25),mm(7),mm(200),mm(7)).stroke
-    canvas.line(mm(25),mm(25),mm(200),mm(25)).stroke
-    canvas.line(mm(25),mm(290),mm(200),mm(290)).stroke
-    canvas.line(mm(25.8),mm(7),mm(25.8),mm(290)).stroke
-    canvas.line(mm(199.2),mm(7),mm(199.2),mm(290)).stroke
+    canvas.line(mm(25.8),mm(7),mm(199.2),mm(7)).stroke
+    canvas.line(mm(25.8),mm(25),mm(199.2),mm(25)).stroke
+    canvas.line(mm(25.8),mm(287),mm(199.2),mm(287)).stroke
+    canvas.line(mm(25.8),mm(7),mm(25.8),mm(287)).stroke
+    canvas.line(mm(199.2),mm(7),mm(199.2),mm(287)).stroke
   }
   canvas.font('Helvetica', size: 15)
   canvas.text( "Isometrie", at:[mm(27),mm(20)])
@@ -45,9 +45,9 @@ doc = HexaPDF::Document.new
     canvas.stroke_color('a1a1a1') {
       canvas.line_cap_style = 1
       [1,2,3,4,5,6,7].each { |i|
-        canvas.line(mm(43.2)+mm(20*x)*i,mm(25),mm(43.2)+mm(20*x)*i,mm(290)).stroke   # top-bottom
-        canvas.line(mm(25),mm(35)+mm(20*i),mm(200),mm(35)+mm(20*i)+mm(175*y)).stroke # left (plane)
-        canvas.line(mm(25),mm(35)+mm(20*i)+mm(175)*y,mm(200),mm(35)+mm(20*i)).stroke # left (plane)
+        canvas.line(mm(43.2)+mm(20*x)*i,mm(25),mm(43.2)+mm(20*x)*i,mm(287)).stroke   # top-bottom
+        canvas.line(mm(25.8),mm(35)+mm(20*i),mm(199.2),mm(35)+mm(20*i)+mm(173.4*y)).stroke # left (plane)
+        canvas.line(mm(25.8),mm(35)+mm(20*i)+mm(173.4)*y,mm(199.2),mm(35)+mm(20*i)).stroke # left (plane)
       }
     }
   }
