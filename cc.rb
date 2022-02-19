@@ -9,7 +9,7 @@ end
 def cc(canvas)
   cEye = canvas.graphic_object(:arc,cx: 0,cy: 0,a: 17,b: 17, start_angle: 49, end_angle: 309)
   canvas.line_width(4.5)
-  canvas.translate(mm(10),mm(7)){
+  canvas.translate(mm(11.5),mm(7)){
     canvas.scale(0.2){
       canvas.translate(125,245) {
         canvas.circle(0,0,55).stroke
@@ -39,9 +39,9 @@ def cc(canvas)
 
   canvas.rotate(90) {
     canvas.font('Helvetica', size: 6.5)
-    canvas.text( "This work in digital or printed form - but neither the handwritten content nor the drawn by hand content - is under this license: < https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode >. At < https://creativecommons.org/licenses/by-nc-sa/4.0 > you", at: [90,-52])
-    canvas.text( "will find a human-readable summary. This work is made with hexapdf < https://https://hexapdf.gettalong.org/ >. Why you may use Creative Commons (CC) on your own work? Take a look at these sites: < https://en.wikipedia.org/wiki/Creative_Commons >", at: [90,-59])
-    canvas.text( "or < https://creativecommons.org >. If there is any handwritten or drawn by hand content on this paper, signed by another author, you are not allowed to share the paper.", at: [90,-66])
-    canvas.text( "Norbert.Reschke@gMail.com [ " + Date.today.to_s + " ]", at: [690,-66])
+    canvas.text( "This work in digital or printed form - but neither the handwritten content nor the drawn by hand content - is under this license: <https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>. At <https://creativecommons.org/licenses/by-nc-sa/4.0>", at: [90,-53])
+    canvas.text( "you will find a human-readable summary. This work is made with hexapdf <https://hexapdf.gettalong.org/>. Why you may use Creative Commons (CC) on your own work? Take a look at these sites: <https://en.wikipedia.org/wiki/Creative_Commons>", at: [90,-60])
+    canvas.text( "or <https://creativecommons.org>. If there is any handwritten or drawn by hand content on this paper, signed by another author, you are not allowed to share the paper.", at: [90,-67])
+    canvas.text( "Norbert.Reschke@gMail.com, " + Date.today.to_s, at: [690,-66])
   }
 end
