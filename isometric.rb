@@ -46,15 +46,28 @@ doc = HexaPDF::Document.new
       canvas.line_cap_style = 1
       [1,2,3,4,5,6,7].each { |i|
         canvas.line(mm(43.2)+mm(20*x)*i,mm(25),mm(43.2)+mm(20*x)*i,mm(287)).stroke   # top-bottom
-        canvas.line(mm(25.8),mm(35)+mm(20*i),mm(199.2),mm(35)+mm(20*i)+mm(173.4*y)).stroke # left (plane)
-        canvas.line(mm(25.8),mm(35)+mm(20*i)+mm(173.4)*y,mm(199.2),mm(35)+mm(20*i)).stroke # left (plane)
+        canvas.line(mm(25.8),mm(35)+mm(20*i),mm(199.2),mm(35)+mm(20*i)+mm(173.4*y)).stroke # left up
+        canvas.line(mm(25.8),mm(35)+mm(20*i)+mm(173.4)*y,mm(199.2),mm(35)+mm(20*i)).stroke # right up
       }
     }
   }
 # end helping lines
 
 # begin helping line marker
+  canvas.line_width(1.2) {
+    canvas.stroke_color('000000') {
+      canvas.line_cap_style = 1
+      [1,2,3,4,5,6,7].each { |i|
+        canvas.line(mm(43.2)+mm(20*x)*i,mm(25),mm(43.2)+mm(20*x)*i,mm(28)).stroke   # top
+        canvas.line(mm(43.2)+mm(20*x)*i,mm(284),mm(43.2)+mm(20*x)*i,mm(287)).stroke # bottom
 
+        canvas.line(mm(25.8),mm(35)+mm(20*i),mm(28.8),mm(35)+mm(20*i)+mm(3*y)).stroke             # left up, left part
+        canvas.line(mm(196.2),mm(135-3*y)+mm(20*i),mm(199.2),mm(135-3*y)+mm(20*i)+mm(3*y)).stroke # left up, right part
+        canvas.line(mm(196.2),mm(35)+mm(20*i)+mm(3)*y,mm(199.2),mm(35)+mm(20*i)).stroke           # right up, right part
+        canvas.line(mm(25.8),mm(135)+mm(20*i),mm(28.8),mm(135)+mm(20*i)-mm(3*y)).stroke           # right up, left part
+      }
+    }
+  }
 # end helping line marker
 
 doc.write("#{File.basename(__FILE__,'.rb')}.pdf", optimize: true)
