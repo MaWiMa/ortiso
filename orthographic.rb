@@ -27,13 +27,14 @@ doc = HexaPDF::Document.new
   canvas.font('Helvetica', size: 15)
   canvas.text( "3-Tafel-Projektion", at:[mm(27),mm(20)])
   canvas.font('Helvetica', size: 8)
-  canvas.text( "Vorname", at:[mm(27),mm(15)])
-  canvas.text( "Name", at:[mm(60),mm(15)])
-  canvas.text( "Nummer", at:[mm(100),mm(15)])
-  canvas.text( "Klasse", at:[mm(130),mm(15)])
-  canvas.text( "Datum", at:[mm(170),mm(15)])
+  canvas.text( "Vorname", at:[mm(27),mm(8)])
+  canvas.text( "Name", at:[mm(60),mm(8)])
+  canvas.text( "Nummer", at:[mm(100),mm(8)])
+  canvas.text( "Klasse", at:[mm(150),mm(8)])
+  canvas.text( "Datum", at:[mm(180),mm(8)])
 # end frame
 
+=begin
 # begin helping lines
   canvas.line_width(0.5) {
     canvas.stroke_color('a1a1a1') {
@@ -45,6 +46,7 @@ doc = HexaPDF::Document.new
     }
   }
 # end helping lines
+=end
 
 # begin helping line marker
   canvas.line_width(1.2) {
@@ -52,9 +54,9 @@ doc = HexaPDF::Document.new
       canvas.line_cap_style = 1
       [1,2,3,4,5,6,7,8].each { |i|
         canvas.line(mm(25)+mm(20*i),mm(25),mm(25)+mm(20*i),mm(28)).stroke
-        canvas.line(mm(25)+mm(20*i),mm(286),mm(25)+mm(20*i),mm(290)).stroke
+        canvas.line(mm(25)+mm(20*i),mm(287),mm(25)+mm(20*i),mm(290)).stroke
         canvas.line(mm(25),mm(65)+mm(20*i),mm(28),mm(65)+mm(20*i)).stroke
-        canvas.line(mm(196),mm(65)+mm(20*i),mm(200),mm(65)+mm(20*i)).stroke
+        canvas.line(mm(197),mm(65)+mm(20*i),mm(200),mm(65)+mm(20*i)).stroke
       }
     }
   }
